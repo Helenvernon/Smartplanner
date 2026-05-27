@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMART Productivity Planner — Plan with Intention. Execute with Precision.</title>
+<meta name="description" content="The board-level digital productivity planner built on the SMART framework. Daily and weekly views, habit tracker, time blocks, reflection. £19.99 one-time.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ivory:#faf8f3;--ivory-mid:#f4f1ea;--ivory-deep:#ede9df;--ink:#0f0e0c;--ink-mid:#3a3830;--ink-muted:#8a877e;--ink-faint:#c5c2bb;--rule:#ddd9d0;--rule-light:#e8e4db;--green:#2d6a4f}
+html{font-size:15px;scroll-behavior:smooth}
+body{background:var(--ivory-deep);font-family:'Montserrat',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:100;background:var(--ivory);border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;padding:16px 40px}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--ink)}
+.nav-logo span{font-style:italic;font-weight:300}
+.nav-buy{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background:var(--ink);color:var(--ivory);border:none;padding:11px 26px;cursor:pointer;font-family:'Montserrat',sans-serif;transition:opacity 0.15s}
+.nav-buy:hover{opacity:0.82}
+.hero{background:var(--ink);color:var(--ivory);padding:100px 40px 90px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(250,248,243,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(250,248,243,0.03) 1px,transparent 1px);background-size:52px 52px}
+.hero-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.hero-eyebrow{font-size:9px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:24px}
+.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,5rem);font-weight:300;line-height:1;letter-spacing:-0.02em;margin-bottom:16px}
+.hero-h1 em{font-style:italic}
+.hero-h1 strong{font-weight:600}
+.hero-sub{font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:44px}
+.hero-price-row{display:flex;align-items:baseline;gap:12px;justify-content:center;margin-bottom:20px}
+.hero-was{font-size:13px;color:#4a4740;text-decoration:line-through}
+.hero-price{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:600;color:var(--ivory);line-height:1}
+.hero-once{font-size:10px;color:var(--ink-muted);letter-spacing:0.15em;text-transform:uppercase}
+.hero-btn{display:inline-block;background:var(--ivory);color:var(--ink);font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding:18px 52px;cursor:pointer;border:none;font-family:'Montserrat',sans-serif;transition:opacity 0.15s}
+.hero-btn:hover{opacity:0.88}
+.hero-trust{display:flex;justify-content:center;gap:28px;margin-top:36px;flex-wrap:wrap}
+.trust-item{font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#4a4740;display:flex;align-items:center;gap:6px}
+.proof-strip{background:var(--ivory);border-bottom:1px solid var(--rule);padding:18px 40px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.proof-item{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-muted);display:flex;align-items:center;gap:8px}
+.proof-num{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--ink)}
+.section{padding:80px 40px}
+.section.alt{background:var(--ivory)}
+.section.dark{background:var(--ink)}
+.section-head{text-align:center;margin-bottom:52px}
+.section-eyebrow{font-size:9px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:12px}
+.section.dark .section-eyebrow{color:#4a4740}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:300;line-height:1.1;color:var(--ink)}
+.section.dark .section-title{color:var(--ivory)}
+.section-title em{font-style:italic}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:900px;margin:0 auto;border:1px solid var(--rule)}
+.feat-cell{padding:32px 26px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--ivory);transition:background 0.2s}
+.feat-cell:hover{background:var(--ivory-mid)}
+.feat-cell:nth-child(3n){border-right:none}
+.feat-cell:nth-last-child(-n+3){border-bottom:none}
+.feat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--rule);line-height:1;margin-bottom:10px}
+.feat-name{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
+.feat-desc{font-size:12.5px;line-height:1.75;color:var(--ink-muted)}
+.smart-row{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--rule);max-width:900px;margin:0 auto;background:var(--ivory)}
+.smart-col{padding:28px 16px 32px;border-right:1px solid var(--rule);text-align:center}
+.smart-col:last-child{border-right:none}
+.smart-big{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--rule);line-height:1;margin-bottom:6px}
+.smart-word{font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
+.smart-blurb{font-size:11px;line-height:1.6;color:var(--ink-muted)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:900px;margin:0 auto}
+.testi-cell{background:#161410;border:1px solid #1e1c18;padding:30px 24px}
+.testi-stars{font-size:13px;color:#5a5750;margin-bottom:12px;letter-spacing:3px}
+.testi-quote{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;font-weight:300;color:var(--ivory);line-height:1.65;margin-bottom:16px}
+.testi-author{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-muted)}
+.testi-role{font-size:9px;color:#3a3830;margin-top:2px}
+#checkout{scroll-margin-top:80px}
+.checkout-wrap{max-width:840px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--rule);background:var(--ivory)}
+.co-left{padding:40px 34px;border-right:1px solid var(--rule)}
+.co-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;margin-bottom:4px;line-height:1.1}
+.co-title em{font-style:italic}
+.co-sub{font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:26px}
+.includes{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.inc{display:flex;align-items:flex-start;gap:11px;font-size:12px;color:var(--ink-mid);line-height:1.5}
+.inc-tick{width:17px;height:17px;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--ivory);font-size:9px;margin-top:1px}
+.price-panel{border:1px solid var(--rule);padding:14px 18px;display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:10px}
+.pp-lbl{font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:4px}
+.pp-amt{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:600;color:var(--ink);line-height:1}
+.pp-was{font-size:11px;color:var(--ink-faint);text-decoration:line-through}
+.pp-save{font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--green)}
+.guarantee-line{font-size:11px;color:var(--ink-muted);display:flex;align-items:center;gap:6px}
+.co-right{padding:40px 34px;background:var(--ivory-mid)}
+.form-head{font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);margin-bottom:22px}
+.fg{margin-bottom:16px}
+.fg label{font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-muted);display:block;margin-bottom:7px}
+.fg input{width:100%;background:var(--ivory);border:1px solid var(--rule);font-family:'Montserrat',sans-serif;font-size:13px;color:var(--ink);padding:11px 13px;outline:none;transition:border-color 0.2s}
+.fg input:focus{border-color:var(--ink)}
+.fg input::placeholder{color:var(--ink-faint)}
+.payment-note{border:1px solid var(--rule);padding:13px 15px;margin-bottom:16px;background:var(--ivory-deep)}
+.payment-note-lbl{font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:5px}
+.payment-note-txt{font-size:12px;color:var(--ink-mid);line-height:1.5}
+.pay-btn{width:100%;background:var(--ink);color:var(--ivory);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;border:none;padding:17px;cursor:pointer;margin-top:4px;transition:opacity 0.15s}
+.pay-btn:hover{opacity:0.85}
+.pay-btn:disabled{opacity:0.5;cursor:wait}
+.secure-badge{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;font-size:10px;color:var(--ink-faint)}
+.payment-error{display:none;background:#fdf0f0;border:1px solid #e8c8c8;padding:11px 14px;margin-bottom:14px;font-size:12px;color:#c0392b}
+.payment-error.show{display:block}
+.faq-list{max-width:640px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--rule)}
+.faq-q{width:100%;background:none;border:none;text-align:left;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;color:var(--ink);padding:20px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq-icon{font-size:18px;color:var(--ink-faint);flex-shrink:0;transition:transform 0.2s}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{font-size:13px;line-height:1.75;color:var(--ink-muted);max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:18px}
+footer{background:var(--ink);padding:40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--ivory);font-style:italic}
+.footer-copy{font-size:10px;color:#2a2820}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:700px){nav{padding:14px 20px}.hero,.section{padding:60px 20px}.features-grid,.smart-row,.testi-grid{grid-template-columns:1fr}.feat-cell{border-right:none}.smart-col{border-right:none;border-bottom:1px solid var(--rule)}.smart-col:last-child{border-bottom:none}.checkout-wrap{grid-template-columns:1fr}.co-left{border-right:none;border-bottom:1px solid var(--rule)}footer{padding:28px 20px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo"><strong>SMART</strong> <span>Productivity Planner</span></div>
+  <button class="nav-buy" onclick="document.getElementById('checkout').scrollIntoView({behavior:'smooth'})">Buy Now — £19.99</button>
+</nav>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">The Digital Productivity Planner</div>
+    <div class="hero-h1">Plan with <em>intention.</em><br><strong>Execute</strong> with precision.</div>
+    <div class="hero-sub">Specific · Measurable · Achievable · Relevant · Time-bound</div>
+    <div class="hero-price-row">
+      <span class="hero-was">£29.99</span>
+      <span class="hero-price">£19.99</span>
+      <span class="hero-once">one-time</span>
+    </div>
+    <button class="hero-btn" id="hero-btn" onclick="handleCheckout()">Get Instant Access →</button>
+    <div class="hero-trust">
+      <div class="trust-item"><span>✓</span>Instant download</div>
+      <div class="trust-item"><span>✓</span>30-day guarantee</div>
+      <div class="trust-item"><span>✓</span>Works in any browser</div>
+    </div>
+  </div>
+</section>
+<div class="proof-strip">
+  <div class="proof-item"><span class="proof-num">2,400+</span> planners sold</div>
+  <div class="proof-item"><span class="proof-num">4.9★</span> average rating</div>
+  <div class="proof-item"><span class="proof-num">£19.99</span> one-time · no subscription</div>
+</div>
+<section class="section alt" id="features">
+  <div class="section-head">
+    <div class="section-eyebrow">What's inside</div>
+    <div class="section-title">Everything you need to<br><em>perform at your peak</em></div>
+  </div>
+  <div class="features-grid">
+    <div class="feat-cell"><div class="feat-num">①</div><div class="feat-name">SMART Goal Setter</div><div class="feat-desc">Break every goal into Specific, Measurable, Achievable, Relevant and Time-bound components — daily and weekly formats included.</div></div>
+    <div class="feat-cell"><div class="feat-num">②</div><div class="feat-name">Top 3 Priorities</div><div class="feat-desc">Ruthless daily focus on the three tasks that move the needle. Checkbox completion keeps you accountable.</div></div>
+    <div class="feat-cell"><div class="feat-num">③</div><div class="feat-name">Time Block Schedule</div><div class="feat-desc">Half-hour slots from 5am to 9pm. Own your calendar, eliminate dead time, protect deep work.</div></div>
+    <div class="feat-cell"><div class="feat-num">④</div><div class="feat-name">Habit Tracker</div><div class="feat-desc">7-day dot grid. Add unlimited habits. Build streaks and compound your results week over week.</div></div>
+    <div class="feat-cell"><div class="feat-num">⑤</div><div class="feat-name">Evening Reflection</div><div class="feat-desc">Star ratings, mood check-in, and four structured prompts: wins, improvements, gratitude, tomorrow's intention.</div></div>
+    <div class="feat-cell"><div class="feat-num">⑥</div><div class="feat-name">Brain Dump</div><div class="feat-desc">Lined notepad to capture everything off your mind. Ideas, concerns, follow-ups — nothing slips through.</div></div>
+  </div>
+</section>
+<section class="section" style="background:var(--ivory-deep)">
+  <div class="section-head">
+    <div class="section-eyebrow">The Framework</div>
+    <div class="section-title">Why <em>SMART</em> outperforms every other method</div>
+  </div>
+  <div class="smart-row">
+    <div class="smart-col"><div class="smart-big">S</div><div class="smart-word">Specific</div><div class="smart-blurb">Vague goals fail. Precise goals have a fighting chance.</div></div>
+    <div class="smart-col"><div class="smart-big">M</div><div class="smart-word">Measurable</div><div class="smart-blurb">Define what done looks like before you start.</div></div>
+    <div class="smart-col"><div class="smart-big">A</div><div class="smart-word">Achievable</div><div class="smart-blurb">Ambition grounded in reality moves faster.</div></div>
+    <div class="smart-col"><div class="smart-big">R</div><div class="smart-word">Relevant</div><div class="smart-blurb">Every task earns its place by connecting to what matters.</div></div>
+    <div class="smart-col"><div class="smart-big">T</div><div class="smart-word">Time-bound</div><div class="smart-blurb">A deadline turns intention into commitment.</div></div>
+  </div>
+</section>
+<section class="section dark">
+  <div class="section-head">
+    <div class="section-eyebrow">What people say</div>
+    <div class="section-title">Trusted by <em>high-performers</em></div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-cell"><div class="testi-stars">★★★★★</div><div class="testi-quote">"The only planner that made me stop and think about whether my goals were actually achievable. Board-ready design too."</div><div class="testi-author">Sarah K.</div><div class="testi-role">Operations Director, FTSE 250</div></div>
+    <div class="testi-cell"><div class="testi-stars">★★★★★</div><div class="testi-quote">"This changed how I structure my entire week. The SMART framework forces clarity I didn't have before."</div><div class="testi-author">James T.</div><div class="testi-role">Founder &amp; CEO</div></div>
+    <div class="testi-cell"><div class="testi-stars">★★★★★</div><div class="testi-quote">"Clean, elegant, professional. I use the daily view every morning and it sets the tone for the entire day."</div><div class="testi-author">Priya M.</div><div class="testi-role">Executive Coach</div></div>
+  </div>
+</section>
+<section class="section alt" id="checkout">
+  <div class="section-head">
+    <div class="section-eyebrow">Get the planner</div>
+    <div class="section-title">One purchase.<br><em>Lifetime access.</em></div>
+  </div>
+  <div class="checkout-wrap">
+    <div class="co-left">
+      <div class="co-title"><strong>SMART</strong> <em>Productivity Planner</em></div>
+      <div class="co-sub">Digital · Instant Download</div>
+      <div class="includes">
+        <div class="inc"><div class="inc-tick">✓</div>Daily view — SMART goal, top 3, time blocks, habits, reflection, brain dump</div>
+        <div class="inc"><div class="inc-tick">✓</div>Weekly view — 7-day grid, weekly SMART goal, scores, full review</div>
+        <div class="inc"><div class="inc-tick">✓</div>Interactive HTML — works in Chrome, Safari, Firefox. No app needed</div>
+        <div class="inc"><div class="inc-tick">✓</div>Print-to-PDF support for physical copies</div>
+        <div class="inc"><div class="inc-tick">✓</div>Board-level ivory and black design</div>
+        <div class="inc"><div class="inc-tick">✓</div>Lifetime access — download once, use forever</div>
+      </div>
+      <div class="price-panel">
+        <div><div class="pp-lbl">Total today</div><div class="pp-amt">£19.99</div></div>
+        <div style="text-align:right"><div class="pp-was">£29.99</div><div class="pp-save">Save £10</div></div>
+      </div>
+      <div class="guarantee-line">🛡 30-day money-back guarantee</div>
+    </div>
+    <div class="co-right">
+      <div class="form-head">Secure Checkout</div>
+      <div class="payment-error" id="payment-error"></div>
+      <div class="fg">
+        <label>Full Name</label>
+        <input type="text" id="buyer-name" placeholder="Jane Smith" autocomplete="name">
+      </div>
+      <div class="fg">
+        <label>Email Address</label>
+        <input type="email" id="buyer-email" placeholder="jane@example.com" autocomplete="email">
+      </div>
+      <div class="payment-note">
+        <div class="payment-note-lbl">Payment</div>
+        <div class="payment-note-txt">You will be securely redirected to Stripe to complete payment. All major cards accepted.</div>
+      </div>
+      <button class="pay-btn" id="pay-btn" onclick="handleCheckout()">Pay £19.99 — Get Instant Access</button>
+      <div class="secure-badge">🔒 Powered by Stripe · 256-bit SSL</div>
+    </div>
+  </div>
+</section>
+<section class="section" id="faq" style="background:var(--ivory-deep)">
+  <div class="section-head">
+    <div class="section-eyebrow">Questions</div>
+    <div class="section-title"><em>Frequently asked</em></div>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What do I receive after purchase? <span class="faq-icon">+</span></button><div class="faq-a">An interactive HTML file that opens in any modern browser. Full daily and weekly planner, all six sections, print-to-PDF. No app, no login, no subscription.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Does it work on mobile and iPad? <span class="faq-icon">+</span></button><div class="faq-a">Yes. Fully responsive — works on mobile, tablet, and desktop in any browser.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is this a one-time payment? <span class="faq-icon">+</span></button><div class="faq-a">Yes. £19.99 once, yours forever. No subscription, no hidden fees.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is your refund policy? <span class="faq-icon">+</span></button><div class="faq-a">30-day no-questions-asked refund. Email us and we will refund in full within 24 hours.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is my payment secure? <span class="faq-icon">+</span></button><div class="faq-a">Payments are processed by Stripe — the same infrastructure used by Amazon and Shopify. Your card details never touch our server.</div></div>
+  </div>
+</section>
+<footer>
+  <div class="footer-logo">SMART Productivity Planner</div>
+  <div class="footer-copy">© 2025 smartproductivityplanner.com</div>
+</footer>
+<script>
+function toggleFaq(btn){
+  const item=btn.parentElement;
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen)item.classList.add('open');
+}
+async function handleCheckout(){
+  const name=document.getElementById('buyer-name').value.trim();
+  const email=document.getElementById('buyer-email').value.trim();
+  const btn=document.getElementById('pay-btn');
+  const errEl=document.getElementById('payment-error');
+  errEl.classList.remove('show');
+  btn.disabled=true;
+  btn.textContent='Redirecting to Stripe...';
+  try{
+    const res=await fetch('/create-checkout-session',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email,name})
+    });
+    const data=await res.json();
+    if(data.url){window.location.href=data.url;}
+    else{errEl.textContent=data.error||'Something went wrong. Please try again.';errEl.classList.add('show');btn.disabled=false;btn.textContent='Pay £19.99 — Get Instant Access';}
+  }catch(err){
+    errEl.textContent='Unable to connect. Please try again.';
+    errEl.classList.add('show');
+    btn.disabled=false;
+    btn.textContent='Pay £19.99 — Get Instant Access';
+  }
+}
+</script>
+</body>
+</html>
